@@ -12,3 +12,9 @@ $("#submit").on('click', function(value) {
 }
 );
 
+$("#reset_button").on('click', function(value) {
+
+	$('li').remove();
+
+}
+);
