@@ -1,21 +1,25 @@
 var myArray = [];
-document.write("<ul style='list-style-type: none'>");
-document.write("</ul>");
-$("#submit").on('click', function(value) {
-	myArray = $('textarea').val().split('\n');
-	for( var i = 0; i<myArray.length; i++ ) {
-	var newValue = myArray[i].toLowerCase().replace(/ /g, "-");
-	$('ul').append("<li>" + newValue + "</li>");
 
+$("#submit").on('click', function() {
+	if ( $('#box').val() || $('#box').text() ) {
+		myArray = $('#box').val().split('\n');
+		$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
+		for( var i = 0; i<myArray.length; i++ ) {
+			var newValue = myArray[i].toLowerCase().replace(/ /g, "-");
+				if ( i === myArray.length - 1) {
+					$('#output').append(newValue);
+				} else {
+					$('#output').append(newValue + '\n');
+				}	
+			}
+		} else {
+ 			alert('This is a required field.');
+		}
 	}
-
-}
 );
 
 $("#reset_button").on('click', function(value) {
-
-	$('li').remove();
-
+	$('#output').remove();
 }
 );
 

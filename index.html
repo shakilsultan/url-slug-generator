@@ -23,10 +23,12 @@
         <!-- Add your site or application content here -->
      <!--    <p>Hello world! This is HTML5 Boilerplate.</p> -->
      <form>
-     <label for="box" style="font-weight: bold;">Enter all values to generate URL Slugs</label><br /><br />
-     <textarea id="box" rows="20" cols="50" autofocus></textarea><br />
+     <label for="box" style="font-weight: bold;">Enter all values below to generate URL Slugs</label><br /><br />
+     <textarea id="box" rows="20" cols="50" autofocus required></textarea><br />
      <button type="button" id="submit" value="Submit">Submit</button>
-     <button type="reset" id="reset_button">Reset</button>
+     <button type="reset" id="reset_button" value="Reset">Reset</button><br /><br />
+     <label for="output" style="font-weight: bold;" id="output_label">Output:</label><br /><br />
+     <!-- <textarea id="output" rows="20" cols="50"></textarea> -->
      </form>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
