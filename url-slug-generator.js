@@ -2,7 +2,7 @@ var myArray = [];
 
 $("#submit").on('click', function() {
 	if ( $('#box').val() || $('#box').text() ) {
-		myArray = $('#box').val().split('\n');
+		myArray = $('#box').val().replace(/\./g, '').split('\n');
 		$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
 		for( var i = 0; i<myArray.length; i++ ) {
 			var newValue = myArray[i].toLowerCase().replace(/ /g, "-");
@@ -10,7 +10,7 @@ $("#submit").on('click', function() {
 					$('#output').append(newValue);
 				} else {
 					$('#output').append(newValue + '\n');
-				}	
+				}
 			}
 		} else {
  			alert('This is a required field.');
