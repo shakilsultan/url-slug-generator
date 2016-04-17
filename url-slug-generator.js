@@ -2,7 +2,7 @@ var myArray = [];
 
 $("#submit").on('click', function() {
 	if ( $('#box').val() || $('#box').text() ) {
-		myArray = $('#box').val().replace(/\./g, '').split('\n');
+		myArray = $('#box').val().replace(/\.|,/g, '').split('\n');
 		$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
 		for( var i = 0; i<myArray.length; i++ ) {
 			var newValue = myArray[i].toLowerCase().replace(/ /g, "-");
