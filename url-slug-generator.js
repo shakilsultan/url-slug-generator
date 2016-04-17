@@ -34,6 +34,7 @@ $('#clipboard').click(function(){
 $("#reset_button").on('click', function(value) {
 	$('#submit').removeAttr('disabled');
 	$('#output').remove();
+	$('#clipboard').attr('disabled', 'disabled');
 }
 );
 
