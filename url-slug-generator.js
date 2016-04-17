@@ -1,7 +1,7 @@
 var myArray = [];
 $("#submit").on('click', function() {
 	if ( $('#box').val() || $('#box').text() ) {
-		myArray = $('#box').val().replace(/\.|,/g, '').split('\n');
+		myArray = $('#box').val().replace(/\.|,|'/g, '').split('\n');
 		if ( $('#output').length === 0) {
 			$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
 		}
