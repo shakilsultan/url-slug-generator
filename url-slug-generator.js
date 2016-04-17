@@ -10,6 +10,7 @@ $("#submit").on('click', function() {
 				if ( i === myArray.length - 1) {
 					$('#output').append(newValue);
 					$('#submit').attr('disabled', 'disabled');
+					$('#clipboard').removeAttr('disabled');
 				} else {
 					$('#output').append(newValue + '\n');
 				}
@@ -19,6 +20,16 @@ $("#submit").on('click', function() {
 		}
 	}
 );
+
+// copy to clipboard code
+
+$('#clipboard').click(function(){
+    var output = document.getElementById('output');
+    output.focus();
+    document.execCommand('SelectAll');
+    document.execCommand("Copy", false, null);
+    output.blur();
+});
 
 $("#reset_button").on('click', function(value) {
 	$('#submit').removeAttr('disabled');
