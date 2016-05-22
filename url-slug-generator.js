@@ -2,12 +2,12 @@ var myArray = [];
 $("#submit").on('click', function() {
 	if ( $('#box').val() || $('#box').text() ) {
 		// myArray variable below checks for period, comma, apostrophe, hashtag and forward-slash and removes them.
-		myArray = $('#box').val().replace(/\.|,|'|#|\//g, '').split('\n');
+		myArray = $('#box').val().replace(/\.|,|'|#|/g, '').split('\n');
 		if ( $('#output').length === 0) {
 			$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
 		}
 		for( var i = 0; i<myArray.length; i++ ) {
-			var newValue = myArray[i].toLowerCase().replace(/ /g, "-");
+			var newValue = myArray[i].toLowerCase().replace(/ |\//g, "-");
 				if ( i === myArray.length - 1) {
 					$('#output').append(newValue);
 					$('#submit').attr('disabled', 'disabled');
