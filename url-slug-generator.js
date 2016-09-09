@@ -7,7 +7,7 @@ $("#submit").on('click', function() {
 			$('form').append('<textarea id="output" rows="20" cols="50"></textarea>');
 		}
 		for( var i = 0; i<myArray.length; i++ ) {
-			var newValue = myArray[i].toLowerCase().replace(/ |\//g, "-");
+			var newValue = myArray[i].toLowerCase().replace(/  |\ |\//g, "-");
 				if ( i === myArray.length - 1) {
 					$('#output').append(newValue);
 					$('#submit').attr('disabled', 'disabled');
